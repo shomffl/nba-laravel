@@ -9,11 +9,11 @@
     </head>
     <body>
        <h1>チーム登録ページ</h1>
-       <form action="/players" method="POST">
+       <form action="/teams" method="POST">
            @csrf
            <div>
                <h2>チーム名</h2>
-               <input type="text" name="team[name]" placeholder="チーム名" />
+               <input type="text" name="team[team_name]" placeholder="チーム名" />
                <p style="color:red">{{$errors->first("team.name")}}</p>
            </div>
            <div>

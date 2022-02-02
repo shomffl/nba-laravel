@@ -33,7 +33,7 @@
        </div>
        <br/>
        @endforeach
-       <div>{{$players->links()}}</div>
+       <div>{{$players->links("pagination::semantic-ui")}}</div>
        <script>
            function checkDelete(){
                const check = window.confirm("本当に削除しても大丈夫ですか？")
