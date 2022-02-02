@@ -8,18 +8,19 @@
        
     </head>
     <body>
-       <h1>選手登録ページ</h1>
-       <form action="/players" method="POST">
+       <h1>選手編集ページ</h1>
+       <form action="/players/{{$player->id}}" method="POST">
            @csrf
+           @method("PUT")
            <div>
                <h2>名前</h2>
-               <input type="text" name="player[name]" placeholder="選手名" />
-               <p style="color:red">{{$errors->first("player.name")}}</p>
+               <input type="text" name="player[name]" placeholder="選手名" value="{{$player->name}}"/>
+                <p style="color:red">{{$errors->first("player.name")}}</p>
            </div>
            <div>
                <h2>コメント</h2>
-               <textarea name="player[body]" placeholder="コメント"></textarea>
-                <p style="color:red">{{$errors->first("player.body")}}</p>
+               <textarea name="player[body]" placeholder="コメント">{{$player->body}}</textarea>
+               <p style="color:red">{{$errors->first("player.body")}}</p>
            </div>
            <div>
                <select name="player[team_id]">
@@ -28,7 +29,7 @@
                     @endforeach
                </select>
            </div>
-           <input type="submit" value="保存"/ >
+           <input type="submit" value="送信"/ >
        </form>
        <div><a href="/">back</a></div>
     </body>
