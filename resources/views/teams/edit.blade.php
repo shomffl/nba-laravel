@@ -14,8 +14,8 @@
            @method("PUT")
            <div>
                <h2>名前</h2>
-               <input type="text" name="team[name]" placeholder="チーム名" value="{{$team->team_name}}"/>
-                <p style="color:red">{{$errors->first("team.name")}}</p>
+               <input type="text" name="team[team_name]" placeholder="チーム名" value="{{$team->team_name}}"/>
+                <p style="color:red">{{$errors->first("team.team_name")}}</p>
            </div>
            <div>
                <h2>コメント</h2>

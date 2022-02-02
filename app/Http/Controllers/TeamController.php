@@ -26,6 +26,11 @@ class TeamController extends Controller
     public function edit(Team $team){
         return view("teams/edit")->with(["team"=>$team]);
     }
+    public function update(TeamRequest $request, Team $team){
+        $input = $request["team"];
+        $team->fill($input)->save();
+        return redirect("/teams");
+    }
     public function delete(Team $team){
         $team->delete();
         return redirect("/teams");
