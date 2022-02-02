@@ -14,10 +14,12 @@
            <div>
                <h2>名前</h2>
                <input type="text" name="player[name]" placeholder="選手名" />
+               <p style="color:red">{{$errors->first("player.name")}}</p>
            </div>
            <div>
                <h2>コメント</h2>
                <textarea name="player[body]" placeholder="コメント"></textarea>
+                <p style="color:red">{{$errors->first("player.body")}}</p>
            </div>
            <div>
                <select name="player[team_id]">

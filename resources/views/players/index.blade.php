@@ -22,5 +22,6 @@
        </div>
        <br/>
        @endforeach
+       <div>{{$players->links()}}</div>
     </body>
 </html>
