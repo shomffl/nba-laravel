@@ -13,7 +13,7 @@
            <a href="/teams">チーム一覧</a>
        </div>
        <div>
-           <a href="/players/create">create</a>
+           <a href="/players/create">選手追加</a>
        </div>
        @foreach ($players as $player)
        <div style="display: inline-block; border: 4px solid; padding:3px; margin-bottom:10px">

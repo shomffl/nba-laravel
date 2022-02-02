@@ -14,4 +14,7 @@ class TeamController extends Controller
     public function show(Team $team){
         return view("teams/show")->with(["players"=> $team->getByTeam()]);
     }
+    public function create(Team $team){
+        return view("teams/create");
+    }
 }
