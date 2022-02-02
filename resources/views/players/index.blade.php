@@ -15,7 +15,7 @@
        @foreach ($players as $player)
        <div style="display: inline-block; border: 4px solid; padding:3px; margin-bottom:10px">
            <h2 style="margin:0;">
-                {{$player->name}}
+               <a href="/players/{{$player->id}}">{{$player->name}}</a>
             </h2>
             <div>
                 {{$player->body}}
