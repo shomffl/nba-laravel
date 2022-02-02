@@ -15,4 +15,9 @@ class PlayerController extends Controller
     public function create(Team $team){
         return view("players/create")->with(["teams" => $team->get()]);
     }
+    public function store(Request $request, Player $player){
+        $input = $request["player"];
+        $player->fill($input)->save();
+        return redirect("/");
+    }
 }

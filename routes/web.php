@@ -12,4 +12,5 @@
 */
 
 Route::get("/players/create","PlayerController@create"); 
-Route::get("/players", "PlayerController@index");
+Route::get("/", "PlayerController@index");
+Route::post("/players", "PlayerController@store"); 
