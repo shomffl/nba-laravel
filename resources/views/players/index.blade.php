@@ -14,15 +14,11 @@
        </div>
        @foreach ($players as $player)
        <div style="display: inline-block; border: 4px solid; padding:3px; margin-bottom:10px">
-           <h2 style="margin:0;">
+           <h2 style="margin:0; padding:0;">
                <a href="/players/{{$player->id}}">{{$player->name}}</a>
             </h2>
-            <div>
-                {{$player->body}}
-            </div>
-             <div>
-                {{$player->team->team_name}}
-            </div>
+            <h3 style="margin:0; padding:0;">所属チーム : {{$player->team->team_name}}</h3>
+            <a href="/players/{{$player->id}}/edit">編集</a>
        </div>
        <br/>
        @endforeach

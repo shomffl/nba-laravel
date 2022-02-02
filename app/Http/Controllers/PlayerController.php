@@ -22,6 +22,14 @@ class PlayerController extends Controller
     public function store(Request $request, Player $player){
         $input = $request["player"];
         $player->fill($input)->save();
-        return redirect("/");
+        return redirect("/players/" . $player->id);
+    }
+    public function edit(Player $player, Team $team){
+        return view("players/edit")->with(["player"=>$player, "teams"=>$team->get()]);
+    }
+    public function update(Request $request, Player $player){
+        $input = $request["player"];
+        $player->fill($input)->save();
+        return redirect("/players/" . $player->id);
     }
 }
