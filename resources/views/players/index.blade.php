@@ -10,6 +10,9 @@
     <body>
        <h1>NBA選手一覧</h1>
        <div>
+           <a href="/teams">チーム一覧</a>
+       </div>
+       <div>
            <a href="/players/create">create</a>
        </div>
        @foreach ($players as $player)
