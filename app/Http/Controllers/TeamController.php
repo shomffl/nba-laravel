@@ -23,4 +23,7 @@ class TeamController extends Controller
         $team->fill($input)->save();
         return redirect("/teams");
     }
+    public function edit(Team $team){
+        return view("teams/edit")->with(["team"=>$team]);
+    }
 }

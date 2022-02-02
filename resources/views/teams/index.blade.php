@@ -14,6 +14,7 @@
            @foreach ($teams as $team)
                <div style="display: inline-block; border: 4px solid; padding:3px; margin-bottom:10px">
                     <h2><a href="teams/{{$team->id}}">{{$team->team_name}}</a></h2>
+                    <a href="/teams/{{$team->id}}/edit">編集</a>
                     <p>{{$team->body}}</p>
                </div>
                <br/>
