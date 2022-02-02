@@ -8,10 +8,9 @@
        
     </head>
     <body>
-       <h1>詳細ページ</h1>
-       <h2>{{$player->name}}</h2>
-       <p>{{$player->body}}</p>
-       <p>所属チーム : {{$player->team->team_name}}</p>
-       <a href="/">back</a>
+       <h1>所属選手一覧</h1>
+       @foreach ($players as $player)
+            <h2><a href="/players/{{$player->id}}">{{$player->name}}</a></h2>
+       @endforeach
     </body>
 </html>
