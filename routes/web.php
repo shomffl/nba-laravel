@@ -17,3 +17,4 @@ Route::get("/", "PlayerController@index");
 Route::post("/players", "PlayerController@store"); 
 Route::get("/players/{player}/edit", "PlayerController@edit");
 Route::put("/players/{player}", "PlayerController@update");
+Route::delete("/players/{player}", "PlayerController@delete"); 

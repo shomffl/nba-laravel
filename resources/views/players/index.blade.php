@@ -18,10 +18,28 @@
                <a href="/players/{{$player->id}}">{{$player->name}}</a>
             </h2>
             <h3 style="margin:0; padding:0;">所属チーム : {{$player->team->team_name}}</h3>
-            <a href="/players/{{$player->id}}/edit">編集</a>
+            <div style="display:flex; gap:3px;">
+                <a href="/players/{{$player->id}}/edit">編集</a>
+                <form action="players/{{$player->id}}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <button onclick="return checkDelete()">削除</button>
+                </form>
+            </div>
+            
        </div>
        <br/>
        @endforeach
        <div>{{$players->links()}}</div>
+       <script>
+           function checkDelete(){
+               const check = window.confirm("本当に削除しても大丈夫ですか？")
+               if (check){
+                   return true;
+               }else{
+                   return false;
+               }
+           }
+       </script>
     </body>
 </html>
