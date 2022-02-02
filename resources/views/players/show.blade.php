@@ -9,6 +9,9 @@
     </head>
     <body>
        <h1>詳細ページ</h1>
-       
+       <h2>{{$player->name}}</h2>
+       <p>{{$player->body}}</p>
+       <p>所属チーム : {{$player->team->team_name}}</p>
+       <a href="/">back</a>
     </body>
 </html>

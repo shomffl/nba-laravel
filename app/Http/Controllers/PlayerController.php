@@ -17,7 +17,7 @@ class PlayerController extends Controller
     }
 
     public function show(Player $player){
-        return view("players/show");
+        return view("players/show")->with(["player"=>$player]);
     }
     public function store(Request $request, Player $player){
         $input = $request["player"];
