@@ -13,3 +13,4 @@
 
 Route::get("/players/create","PlayerController@create"); 
 Route::get("/players", "PlayerController@index");
+Route::get("/players/{player}", "PlayerController@show");
