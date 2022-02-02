@@ -15,6 +15,11 @@
                <div style="display: inline-block; border: 4px solid; padding:3px; margin-bottom:10px">
                     <h2><a href="teams/{{$team->id}}">{{$team->team_name}}</a></h2>
                     <a href="/teams/{{$team->id}}/edit">編集</a>
+                    <form action="/teams/{{$team->id}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <input type="submit" value="削除" onclick="return checkDelete()"/>
+                    </form>
                     <p>{{$team->body}}</p>
                </div>
                <br/>
@@ -22,6 +27,15 @@
         </div>
         <div>{{$teams->links("pagination::semantic-ui")}}</div>
         <a href="/">back</a>
-        
+        <script>
+            function checkDelete(){
+                const check = window.confirm("本当に削除しますか？")
+                if (check){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        </script>
     </body>
 </html>

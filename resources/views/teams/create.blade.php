@@ -13,12 +13,12 @@
            @csrf
            <div>
                <h2>チーム名</h2>
-               <input type="text" name="team[name]" placeholder="チーム名" />
+               <input type="text" name="team[team_name]" placeholder="チーム名" value="{{old("team.name")}}"/>
                <p style="color:red">{{$errors->first("team.name")}}</p>
            </div>
            <div>
                <h2>コメント</h2>
-               <textarea name="team[body]" placeholder="コメント"></textarea>
+               <textarea name="team[body]" placeholder="コメント">{{old("team.body")}}</textarea>
                 <p style="color:red">{{$errors->first("team.body")}}</p>
            </div>
            <input type="submit" value="保存"/ >

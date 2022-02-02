@@ -26,4 +26,8 @@ class TeamController extends Controller
     public function edit(Team $team){
         return view("teams/edit")->with(["team"=>$team]);
     }
+    public function delete(Team $team){
+        $team->delete();
+        return redirect("/teams");
+    }
 }

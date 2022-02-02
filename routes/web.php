@@ -24,3 +24,4 @@ Route::get("/teams", "TeamController@index");
 Route::get("/teams/{team}/edit", "TeamController@edit"); 
 Route::get("/teams/{team}", "TeamController@show");
 Route::post("/teams", "TeamController@store");
+Route::delete("/teams/{team}", "TeamController@delete");
