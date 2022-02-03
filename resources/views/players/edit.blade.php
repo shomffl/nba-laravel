@@ -31,6 +31,17 @@
                     @endforeach
                </select>
            </div>
+           
+           <div>
+               @foreach ($positions as $position)
+                <lable>
+                    <input type="checkbox" value={{$position->id}} name="positions_array[]">
+                        {{$position->position}}
+                    </input>
+                </lable>
+                @endforeach
+           </div>
+           
            <input type="submit" value="送信"/ >
        </form>
        <div><a href="/">back</a></div>

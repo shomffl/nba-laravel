@@ -18,6 +18,10 @@ class Player extends Model
         return $this->orderBy("updated_at", "DESC")->paginate($limit_count);
     }
     
+    public function positions(){
+        return $this->belongsToMany("App\Position");
+    }
+    
     protected $fillable = [
         "name",
         "body",
