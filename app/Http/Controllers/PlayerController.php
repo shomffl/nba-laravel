@@ -21,7 +21,7 @@ class PlayerController extends Controller
     public function show(Player $player){
         return view("players/show")->with(["player"=>$player]);
     }
-    public function store(Request $request, Player $player){
+    public function store(PlayerRequest $request, Player $player){
         $input_player = $request["player"];
         $input_position = $request->positions_array;
         $player->fill($input_player)->save();
