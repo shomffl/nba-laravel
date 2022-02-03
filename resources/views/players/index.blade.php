@@ -23,9 +23,12 @@
                <a href="/players/{{$player->id}}">{{$player->name}}</a>
             </h2>
             <h3 style="margin:0; padding:0;">所属チーム : {{$player->team->team_name}}</h3>
-            @foreach ($player->positions as $position)
-                {{$position->position}}
-            @endforeach
+            <div style="display:flex;">
+                <p>ポジション : </p>
+                @foreach ($player->positions as $position)
+                    {{$position->position}}
+                @endforeach
+            </div>
             <div style="display:flex; gap:3px;">
                 <a href="/players/{{$player->id}}/edit">編集</a>
                 <form action="players/{{$player->id}}" method="POST">
@@ -34,9 +37,7 @@
                     <button onclick="return checkDelete()">削除</button>
                 </form>
             </div>
-            
        </div>
-       <br/>
        @endforeach
        <div>{{$players->links("pagination::semantic-ui")}}</div>
        <script>
