@@ -29,6 +29,14 @@
                     {{$position->position}}
                 @endforeach
             </div>
+            <div style="display:flex; gap:3px;">
+                <a href="/players/{{$player->id}}/edit">編集</a>
+                <form action="players/{{$player->id}}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <button onclick="return checkDelete()">削除</button>
+                </form>
+            </div>
        </div>
        @endforeach
        <div>{{$players->links("pagination::semantic-ui")}}</div>

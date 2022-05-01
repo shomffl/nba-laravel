@@ -18,7 +18,8 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::post("/players", "PlayerController@store"); 
     Route::get("/players/{player}/edit", "PlayerController@edit");
     Route::put("/players/{player}", "PlayerController@update");
-
+    Route::delete("/players/{player}", "PlayerController@delete");
+    
     Route::get("/teams/create", "TeamController@create");
     Route::get("/teams", "TeamController@index");
     Route::get("/teams/{team}/edit", "TeamController@edit"); 
