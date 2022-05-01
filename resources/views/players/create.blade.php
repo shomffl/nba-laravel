@@ -37,8 +37,10 @@
                         {{$position->position}}
                     </input>
                 </lable>
-                @endforeach
+            @endforeach
            </div>
+           
+           
            <input type="submit" value="保存"/ >
        </form>
        <div><a href="/">back</a></div>
