@@ -13,7 +13,7 @@ class TeamController extends Controller
         return view("teams/index")->with(["teams"=> $team->getPaginateByLimit()]);
     }
     public function show(Team $team){
-        return view("teams/show")->with(["players"=> $team->getByTeam()]);
+        return view("teams/show")->with(["players"=> $team->players]);
     }
     public function create(Team $team){
         return view("teams/create");
