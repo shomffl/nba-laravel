@@ -36,8 +36,4 @@ class PlayerController extends Controller
         $player->fill($input)->save();
         return redirect("/players/" . $player->id);
     }
-    public function delete(Player $player){
-        $player->delete();
-        return redirect("/");
-    }
 }
